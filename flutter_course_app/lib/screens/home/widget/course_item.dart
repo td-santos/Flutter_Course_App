@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course_app/constants/colors.dart';
 import 'package:flutter_course_app/models/course.dart';
+import 'package:flutter_course_app/screens/detail/detail.dart';
 
 class CourseItem extends StatelessWidget {
 
@@ -90,7 +91,10 @@ class CourseItem extends StatelessWidget {
             bottom: 60,
             right: 20,
             child: ElevatedButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context)=>DetailPage(course: course)));
+              },
               style: ElevatedButton.styleFrom(
                 primary: kAccent,
                 elevation: 0,

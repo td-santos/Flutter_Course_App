@@ -29,6 +29,51 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: _navigationBar(),
+    );
+  }
+
+  BottomNavigationBar _navigationBar() {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: kBackground,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      items: [
+        BottomNavigationBarItem(
+          label: 'home',
+          icon: Container(
+            padding: EdgeInsets.only(bottom: 5),
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: kAccent,
+                  width: 2
+                )
+              )
+            ),
+            child: Text('Home', style: TextStyle(
+              fontWeight: FontWeight.bold
+            ),),
+          )
+        ),
+
+        BottomNavigationBarItem(
+          label: 'calendar',
+          icon: Icon(Icons.calendar_today,size: 22,)
+        ),
+
+        BottomNavigationBarItem(
+          label: 'bookmark',
+          icon: Icon(Icons.bookmark_border_outlined,size: 22,)
+        ),
+
+        BottomNavigationBarItem(
+          label: 'user',
+          icon: Icon(Icons.person_outline,size: 22,)
+        ),
+
+      ],
     );
   }
 
